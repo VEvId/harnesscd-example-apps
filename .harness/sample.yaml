@@ -33,8 +33,10 @@ pipeline:
                     environmentVariables: []
                     outputVariables: []
                     executionTarget:
-                      connectorRef: ssh59v2
+                      connectorRef: satsatuempat
                       host: 192.168.1.114
+                    delegateSelectors:
+                      - laptop-delegate
                   timeout: 10m
               - step:
                   type: Email
@@ -45,5 +47,7 @@ pipeline:
                     cc: ""
                     subject: selesai deploy
                     body: sudah selesai di deploy di server 114
+                    delegateSelectors:
+                      - laptop-delegate
                   timeout: 10m
         tags: {}
