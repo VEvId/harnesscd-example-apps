@@ -37,15 +37,31 @@ pipeline:
                       host: 192.168.1.114
                   timeout: 10m
               - step:
-                  type: Email
-                  name: Email_1
-                  identifier: Email_1
+                  type: Container
+                  name: Container_1
+                  identifier: Container_1
                   spec:
-                    to: roto@handalin.com
-                    cc: ""
-                    subject: selesai deploy
-                    body: sudah selesai di deploy di server 114
-                    delegateSelectors:
-                      - heidar-delegates
-                  timeout: 10m
+                    connectorRef: rotodocker
+                    image: node-harness:v1
+                    command: docker run -d -p 5000:5000 node-harness:v1
+                    shell: Powershell
+                    infrastructure:
+                      type: KubernetesDirect
+                      spec:
+                        connectorRef: test
+                        namespace: default
+                        resources:
+                          limits:
+                            cpu: "0.5"
+                            memory: 500Mi
+                        annotations: {}
+                        labels: {}
+                        containerSecurityContext:
+                          capabilities:
+                            drop: []
+                            add: []
+                        nodeSelector: {}
+                    outputVariables: []
+                    envVariables: {}
+                  timeout: 2m
         tags: {}
