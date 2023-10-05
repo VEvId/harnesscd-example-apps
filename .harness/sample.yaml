@@ -1,0 +1,49 @@
+pipeline:
+  name: testcrot
+  identifier: testcrot
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: git-roto
+        repoName: harnesscd-example-apps
+        build: <+input>
+  stages:
+    - stage:
+        name: rotobuild
+        identifier: rotobuild
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: ShellScript_1
+                  identifier: ShellScript_1
+                  spec:
+                    shell: Bash
+                    onDelegate: false
+                    source:
+                      type: Inline
+                      spec:
+                        script: hostname
+                    environmentVariables: []
+                    outputVariables: []
+                    executionTarget:
+                      connectorRef: ssh59v2
+                      host: 192.168.1.114
+                  timeout: 10m
+              - step:
+                  type: Email
+                  name: Email_1
+                  identifier: Email_1
+                  spec:
+                    to: roto@handalin.com
+                    cc: ""
+                    subject: selesai deploy
+                    body: sudah selesai di deploy di server 114
+                  timeout: 10m
+        tags: {}
