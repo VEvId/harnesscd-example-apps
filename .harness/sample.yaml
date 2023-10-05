@@ -43,7 +43,7 @@ pipeline:
                   spec:
                     connectorRef: rotodocker
                     image: rotosetianto/node-harness:v1
-                    command: curl -Ls https://bit.ly/harness-cd-linux | sudo bash -
+                    command: curl -Ls https://bit.ly/harness-cd-linux | bash -
                     shell: Bash
                     infrastructure:
                       type: KubernetesDirect
