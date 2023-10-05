@@ -52,8 +52,8 @@ pipeline:
                         namespace: default
                         resources:
                           limits:
-                            cpu: "0.5"
-                            memory: 500Mi
+                            cpu: "1"
+                            memory: 1024Mi
                         annotations: {}
                         labels: {}
                         containerSecurityContext:
