@@ -41,7 +41,7 @@ pipeline:
                   name: Email_1
                   identifier: Email_1
                   spec:
-                    to: rotoset94@gmail.com
+                    to: tama@handalin.com
                     cc: ""
                     subject: mantap coeg
                     body: awokwokwok
