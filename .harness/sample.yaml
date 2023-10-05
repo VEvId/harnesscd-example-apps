@@ -45,5 +45,7 @@ pipeline:
                     cc: ""
                     subject: selesai deploy
                     body: sudah selesai di deploy di server 114
+                    delegateSelectors:
+                      - heidar-delegates
                   timeout: 10m
         tags: {}
