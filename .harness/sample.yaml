@@ -33,7 +33,7 @@ pipeline:
                     environmentVariables: []
                     outputVariables: []
                     executionTarget:
-                      connectorRef: ssh59v2
+                      connectorRef: satsatuempat
                       host: 192.168.1.114
                   timeout: 10m
               - step:
@@ -45,5 +45,7 @@ pipeline:
                     cc: ""
                     subject: selesai deploy
                     body: sudah selesai di deploy di server 114
+                    delegateSelectors:
+                      - heidar-delegates
                   timeout: 10m
         tags: {}
