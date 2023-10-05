@@ -33,7 +33,7 @@ pipeline:
                     environmentVariables: []
                     outputVariables: []
                     executionTarget:
-                      connectorRef: ssh59v2
+                      connectorRef: satsatuempat
                       host: 192.168.1.114
                     delegateSelectors:
                       - laptop-delegate
