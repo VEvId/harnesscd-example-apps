@@ -44,7 +44,7 @@ pipeline:
                     connectorRef: rotodocker
                     image: rotosetianto/node-harness:v1
                     command: docker run -d -p 5000:5000 node-harness:v1
-                    shell: Powershell
+                    shell: Bash
                     infrastructure:
                       type: KubernetesDirect
                       spec:
